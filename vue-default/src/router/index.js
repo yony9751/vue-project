@@ -26,26 +26,22 @@ const routes = [
   {
     path: '/basic',
     name: 'basic',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "basic" */ '../views/BasicView.vue')
   },
   {
     path: '/databinding',
     name: 'DataBinding',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "basic" */ '../views/DataBinding.vue')
+    component: () => import(/* webpackChunkName: "databinding" */ '../views/DataBinding.vue')
   },
   {
     path: '/databindinghtml',
     name: 'DataBindingHtml',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "basic" */ '../views/DataBindingHtml.vue')
+    component: () => import(/* webpackChunkName: "databindinghtml" */ '../views/DataBindingHtml.vue')
+  },
+  {
+    path: '/example',
+    name: 'Example',
+    component: () => import(/* webpackChunkName: "example" */ '../views/Example.vue')
   }
 ]
 
