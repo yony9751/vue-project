@@ -29,7 +29,15 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "basic", eslint-disable */ '../views/BasicView.vue')
+    component: () => import(/* webpackChunkName: "basic" */ '../views/BasicView.vue')
+  },
+  {
+    path: '/databinding',
+    name: 'DataBinding',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "basic" */ '../views/DataBinding.vue')
   }
 ]
 
