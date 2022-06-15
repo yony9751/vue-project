@@ -21,7 +21,9 @@
   <label for=""><input type="radio" v-bind:value="radio[1]" v-model="picked">부산</label>
   <label for=""><input type="radio" v-bind:value="radio[2]" v-model="picked">제주</label>
   <br><br><div>선택한 지역 : {{picked}}</div>
-  
+  <img alt="Vue logo" v-bind:src="url" style="width:200px;"> <br>
+  <input type="text" v-model="textValue">
+  <button type="button" v-bind:disabled="textValue == ''">클릭</button>
 </div>
 </template>
 <script>
@@ -39,7 +41,9 @@ export default {
       radio1 :"서울2",
       radio2 :"부산2",
       radio3 :"제주2",
-      picked :''
+      picked :'',
+      url : '../assets/logo.png', //상대경로는 안먹는건가?
+      textValue : ''
     };
   },
   setup() {},
