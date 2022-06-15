@@ -24,6 +24,15 @@
   <img alt="Vue logo" v-bind:src="url" style="width:200px;"> <br>
   <input type="text" v-model="textValue">
   <button type="button" v-bind:disabled="textValue == ''">클릭</button>
+  <br><br>
+  <div>클래스 , style 데이터 바인딩</div>
+  <br>
+  <div class="container" v-bind:class="{'active':isActive, 'red':isRed}">클래스 데이터 바인딩 연습</div>
+  <div class="container" v-bind:class="[isActive, isRed]">클래스 데이터 바인딩 연습</div>
+  <div>인라인 style 데이터 바인딩</div>
+  <br>
+  <div v-bind:style="styleObject">인라인 스타일 테스트 테스트 </div>
+  <div v-bind:style="[baseStyle,addStyle]">인라인 스타일 테스트 테스트 </div>
 </div>
 </template>
 <script>
@@ -43,7 +52,18 @@ export default {
       radio3 :"제주2",
       picked :'',
       url : '../assets/logo.png', //상대경로는 안먹는건가?
-      textValue : ''
+      textValue : '',
+      //클래스 바인딩
+      isActive : 'active',
+      isRed : 'red',
+      //인라인 스타일 
+      styleObject : {
+        backgroundColor : 'yellow',
+        color: 'red',
+        fontWeight : 'bold'
+      },
+      baseStyle : 'background-color:yellow;',
+      addStyle : 'color:red;font-weight:bold'
     };
   },
   setup() {},
@@ -56,3 +76,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .container{width:100%;font-size: 20px;;}
+  .active{font-size: 25px;background: yellow;}
+  .red{color: red;}
+</style>
