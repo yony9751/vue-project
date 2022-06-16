@@ -22,6 +22,14 @@
   <div>method 로 하는 경우 / 매번 호출할 때마다 동일한 연산을 계속 하게함</div>
   <div>Hello, {{fullName}}</div> 
   <div>computed 이용하는 경우 / 딱 한 번 호출함, 데이터 필드의 변동사항을 계속 감시하고 반영함</div>
+  <br><br>
+  <div>watch 연습</div>
+  <input type="text" v-model.number="x1">
+  <input type="text" v-model.number="x2">
+  <div>watch 사용하는 경우 </div>
+  <input type="text" v-model="y">
+  <div>computed 사용하는 경우</div>
+  <input type="text" v-model="getPlus">
 </div>
 </template>
 <script>
@@ -33,12 +41,26 @@ export default {
       count: 0,
       city: '',
       firstName: '재석',
-      lastName : '유'
+      lastName : '유',
+      x1 : '',
+      x2 : '',
+      y : ''
     };
+  },
+  watch : {
+    x1(){
+      this.y = this.x1 + this.x2
+    },
+    x2(){
+      this.y = this.x1 + this.x2
+    }
   },
   computed : {
     fullName() {
       return this.lastName + this.firstName
+    },
+    getPlus(){
+      return this.x1 + this.x2
     }
   },
   setup() {},
