@@ -14,7 +14,14 @@
   <br><br><br> 
   <div>@keyup.enter / 과 비슷하게 쓸 수 있는 것들 : tab, delete, esc, space, up, down, left, right</div>
   <input type="text" @keyup.enter="two">
-  
+  <br><br><br>
+  <div>computed 연습</div>
+  <input type="text" v-model="lastName">
+  <input type="text" v-model="firstName">
+  <div>Hello, {{getFullName()}}</div> 
+  <div>method 로 하는 경우 / 매번 호출할 때마다 동일한 연산을 계속 하게함</div>
+  <div>Hello, {{fullName}}</div> 
+  <div>computed 이용하는 경우 / 딱 한 번 호출함, 데이터 필드의 변동사항을 계속 감시하고 반영함</div>
 </div>
 </template>
 <script>
@@ -24,8 +31,15 @@ export default {
   data(){
     return {
       count: 0,
-      city: ''
+      city: '',
+      firstName: '재석',
+      lastName : '유'
     };
+  },
+  computed : {
+    fullName() {
+      return this.lastName + this.firstName
+    }
   },
   setup() {},
   created() {},
@@ -43,6 +57,9 @@ export default {
     },
     changeSelect(){
       alert(this.city);
+    },
+    getFullName(){
+      return this.lastName + this.firstName
     }
   }
 }
