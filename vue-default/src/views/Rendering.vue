@@ -116,7 +116,8 @@ export default {
         job : this.job
       }
       if(this.name == ''){
-        return alert('이름을 입력해주세요');
+        //return alert('이름을 입력해주세요');
+        return this.$swal('사용자 이름을 입력해주세요'); // sweetalert2 사용하는 경우
       }
       if(this.age == 0){
         return alert('나이를 입력해주세요');
