@@ -1,6 +1,6 @@
 <template>
 <div>
-  <select name="" id="">
+  <select name="" id="" v-model="selectedCity">
     <option :value="city.v" :key="i" v-for="(city, i) in options">{{city.t}}</option>
   </select>
   <table>
@@ -28,6 +28,35 @@
   <h2 v-else-if="A=='b'">A가 b이면 보입니다</h2>
   <h2 v-else>A가 a도 b도 아니면 보입니다</h2>
   <h2 v-show="B=='b'">B가 b이면 보입니다.(v-show)</h2>
+  <br><br>
+  <div>
+    <h2>조회/저장 연습하기</h2>
+    <input type="text" v-model="userName" @keyup.enter="searchUserList">
+    <button type="button" @click="searchUserList">조회하기</button>
+    <table>
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>나이</th>
+          <th>직업</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr :key="i" v-for="(user, i) in userList">
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.job}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>저장하기 연습</h2>
+    <label for="save1">이름</label><input type="text" v-model="name" id="save1">
+    <label for="save2">나이</label><input type="text" v-model.number="age" id="save2">
+    <label for="save3">직업</label><input type="text" v-model="job" id="save3">
+    <button type="button" @click="saveUserInfo">저장하기</button>
+  </div>
 </div>
 </template>
 <script>
@@ -47,7 +76,13 @@ export default {
       ],
       Rendering : true,
       A: 'a',
-      B: 'b'
+      B: 'b',
+      selectedCity : '',
+      userName: '',
+      userList: '',
+      name: '',
+      age : 0,
+      job : ''
     };
   },
   setup() {},
@@ -55,6 +90,49 @@ export default {
   mounted() {},
   unmounted() {},
   methods: {
+    //조회하기
+    searchUserList(){
+      const params = {
+        selectedCity : this.selectedCity,
+        userName : this.UserName
+      }
+      this.userList = this.getUserList(params);
+    },
+    // 서버 대체
+    getUserList(params){
+      console.log(params);
+      let list = [
+        {name:'유재석', age:50, job: "연예인"},
+        {name:'하하', age:30, job: "연예인"},
+        {name:'정준하', age:30, job: "연예인"}
+      ];
+      return list;
+    },
+    //저장하기
+    saveUserInfo(){
+      const params = {
+        name : this.name,
+        age : this.age,
+        job : this.job
+      }
+      if(this.name == ''){
+        return alert('이름을 입력해주세요');
+      }
+      if(this.age == 0){
+        return alert('나이를 입력해주세요');
+      }
+      const r = this.saveData(params);
+      if(r == 'S'){
+        alert('저장이 완료되었습니다');
+      }else{
+        alert('저장 실패')
+      }
+    },
+    saveData(params){
+      console.log(params);
+      const r = 'F';
+      return r;
+    }
   }
 }
 </script>
