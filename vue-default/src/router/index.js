@@ -52,6 +52,11 @@ const routes = [
     path: '/event',
     name: 'Event',
     component: () => import(/* webpackChunkName: "example" */ '../views/Event.vue')
+  },
+  {
+    path: '/serverdata',
+    name: 'ServerData',
+    component: () => import(/* webpackChunkName: "example" */ '../views/ServerData.vue')
   }
 ]
 
