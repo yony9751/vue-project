@@ -97,6 +97,8 @@ export default {
   methods: {
     callChildFunc(){
       this.$refs.child.childFunc();
+      this.$refs.child.msg = '부모 컴포넌트에서 변경';
+      //데이터 값을 바꿀 때 $refs 로 자식 컴포넌트로 접근 후 바로 변경 가능
     }
   }
 }

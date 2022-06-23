@@ -4,6 +4,7 @@
   isOk : {{isOk}}<br>
   <div>{{ author.name }} {{ author.company }}</div>
   <button type="button" @click="childFunc" ref="child_btn">자식 클릭</button>
+  {{msg}}
 </div>
 </template>
 <script>
@@ -29,7 +30,7 @@ export default {
   components: {},
   data(){
     return {
-      sampleData: ''
+      msg: '자식 데이터'
     };
   },
   setup() {},
