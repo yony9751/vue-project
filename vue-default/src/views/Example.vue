@@ -41,7 +41,8 @@
   <div>위 경우 isOk="true" 는 불리언 true 값이 아닌 문자 true 로 전달됨 <br>아래 두 가지 방법으로 전달 가능!</div>
   <!-- <ChildComponent :likes="likes" :isOk="true" /> -->
   <div>부모 컴포넌트에서 자식 컴포넌트의 이벤트 발생</div>
-  <ChildComponent :likes="likes" :isOk="isOk" :commentIds="commentIds" :author="author" ref="child" /> 
+  <ChildComponent :likes="likes" :isOk="isOk" :commentIds="commentIds" :author="author" ref="child" @send-message="sendMsg"/> 
+    <h2>{{parentMsg}}</h2>
   <button type="button" @click="callChildFunc">부모 클릭</button>
 </div>
 </template>
@@ -84,7 +85,8 @@ export default {
       likes : 23,
       isOk : true,
       commentIds : [1,3,6,8],
-      author : {name : "홍길동", company : 22}
+      author : {name : "홍길동", company : 22},
+      parentMsg : ''
     };
   },
   setup() {},
@@ -99,7 +101,12 @@ export default {
       this.$refs.child.childFunc();
       this.$refs.child.msg = '부모 컴포넌트에서 변경';
       //데이터 값을 바꿀 때 $refs 로 자식 컴포넌트로 접근 후 바로 변경 가능
+    },
+    sendMsg(data){
+      //alert(data);
+      this.parentMsg = data;
     }
+
   }
 }
 </script>
