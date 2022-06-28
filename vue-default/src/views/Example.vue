@@ -44,6 +44,7 @@
   <ChildComponent :likes="likes" :isOk="isOk" :commentIds="commentIds" :author="author" ref="child" @send-message="sendMsg"/> 
     <h2>{{parentMsg}}</h2>
   <button type="button" @click="callChildFunc">부모 클릭</button>
+  <button type="button" @click="showData">부모 버튼 데이터 변경 확인하기</button>
 </div>
 </template>
 <script>
@@ -89,6 +90,11 @@ export default {
       parentMsg : ''
     };
   },
+  computed : {
+    msg() {
+      return this.$refs.child.msg;
+    }
+  },
   setup() {},
   created() {},
   mounted() {
@@ -105,8 +111,10 @@ export default {
     sendMsg(data){
       //alert(data);
       this.parentMsg = data;
+    },
+    showData(){
+      alert(this.msg);
     }
-
   }
 }
 </script>
