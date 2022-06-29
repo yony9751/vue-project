@@ -57,6 +57,16 @@ const routes = [
     path: '/serverdata',
     name: 'ServerData',
     component: () => import(/* webpackChunkName: "example" */ '../views/ServerData.vue')
+  },
+  {
+    path: '/slot',
+    name: 'SlotUseModalLayout',
+    component: () => import(/* webpackChunkName: "example" */ '../views/SlotUseModalLayout.vue')
+  },
+  {
+    path: '/provideinject',
+    name: 'ProvideInject',
+    component: () => import(/* webpackChunkName: "example" */ '../views/ProvideInject.vue')
   }
 ]
 
