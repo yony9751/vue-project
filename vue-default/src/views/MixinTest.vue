@@ -22,13 +22,13 @@
 </div>
 </template>
 <script>
-import ApiMixin from '../api.js';
+//import ApiMixin from '../api.js';
 import MonitoringMixin from '../monitoring.js';
 export default {
   /* eslint-disable */
   name: '',
   components: {},
-  mixins : [ApiMixin,MonitoringMixin],
+  mixins : [MonitoringMixin],
   data(){
     return {
       productList: []
@@ -42,7 +42,7 @@ export default {
   unmounted() {},
   methods: {
     async getProductList(){
-      this.productList = await this.$callAPI('https://c2a53a2d-52c1-4f5e-92da-c74784938d57.mock.pstmn.io/productList','get',{});
+      this.productList = await this.$api('https://c2a53a2d-52c1-4f5e-92da-c74784938d57.mock.pstmn.io/productList','get',{});
       console.log(this.productList);
     }
   }
