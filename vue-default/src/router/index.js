@@ -97,6 +97,11 @@ const routes = [
     path: '/compositionAPI4',
     name: 'CompositionAPI4',
     component: () => import(/* webpackChunkName: "example" */ '../views/CompositionAPI3.vue')
+  },
+  {
+    path: '/plugins',
+    name: 'Plugins',
+    component: () => import(/* webpackChunkName: "example" */ '../views/PluginsTest.vue')
   }
 ]
 
