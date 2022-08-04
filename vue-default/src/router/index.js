@@ -46,62 +46,67 @@ const routes = [
   {
     path: '/rendering',
     name: 'Rendering',
-    component: () => import(/* webpackChunkName: "example" */ '../views/Rendering.vue')
+    component: () => import(/* webpackChunkName: "rendering" */ '../views/Rendering.vue')
   },
   {
     path: '/event',
     name: 'Event',
-    component: () => import(/* webpackChunkName: "example" */ '../views/Event.vue')
+    component: () => import(/* webpackChunkName: "event" */ '../views/Event.vue')
   },
   {
     path: '/serverdata',
     name: 'ServerData',
-    component: () => import(/* webpackChunkName: "example" */ '../views/ServerData.vue')
+    component: () => import(/* webpackChunkName: "serverdata" */ '../views/ServerData.vue')
   },
   {
     path: '/slot',
     name: 'SlotUseModalLayout',
-    component: () => import(/* webpackChunkName: "example" */ '../views/SlotUseModalLayout.vue')
+    component: () => import(/* webpackChunkName: "slot" */ '../views/SlotUseModalLayout.vue')
   },
   {
     path: '/provideinject',
     name: 'ProvideInject',
-    component: () => import(/* webpackChunkName: "example" */ '../views/ProvideInject.vue')
+    component: () => import(/* webpackChunkName: "provideinject" */ '../views/ProvideInject.vue')
   },
   {
     path: '/mixin',
     name: 'MixinTest',
-    component: () => import(/* webpackChunkName: "example" */ '../views/MixinTest.vue')
+    component: () => import(/* webpackChunkName: "mixin" */ '../views/MixinTest.vue')
   },
   {
     path: '/calculator',
     name: 'Calculator',
-    component: () => import(/* webpackChunkName: "example" */ '../views/Calculator.vue')
+    component: () => import(/* webpackChunkName: "calculator" */ '../views/Calculator.vue')
   },
   {
     path: '/compositionAPI',
     name: 'CompositionAPI',
-    component: () => import(/* webpackChunkName: "example" */ '../views/CompositionAPI.vue')
+    component: () => import(/* webpackChunkName: "compositionAPI" */ '../views/CompositionAPI.vue')
   },
   {
     path: '/compositionAPI2',
     name: 'CompositionAPI2',
-    component: () => import(/* webpackChunkName: "example" */ '../views/CompositionAPI2.vue')
+    component: () => import(/* webpackChunkName: "compositionAPI2" */ '../views/CompositionAPI2.vue')
   },
   {
     path: '/compositionAPI3',
     name: 'CompositionAPI3',
-    component: () => import(/* webpackChunkName: "example" */ '../views/CompositionAPI3.vue')
+    component: () => import(/* webpackChunkName: "compositionAPI3" */ '../views/CompositionAPI3.vue')
   },
   {
     path: '/compositionAPI4',
     name: 'CompositionAPI4',
-    component: () => import(/* webpackChunkName: "example" */ '../views/CompositionAPI3.vue')
+    component: () => import(/* webpackChunkName: "compositionAPI4" */ '../views/CompositionAPI3.vue')
   },
   {
     path: '/plugins',
     name: 'Plugins',
-    component: () => import(/* webpackChunkName: "example" */ '../views/PluginsTest.vue')
+    component: () => import(/* webpackChunkName: "plugins" */ '../views/PluginsTest.vue')
+  },
+  {
+    path: '/storeaccess',
+    name: 'Store Access',
+    component: () => import(/* webpackChunkName: "storeaccess" */ '../views/StoreAccess.vue')
   }
 ]
 
